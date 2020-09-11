@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import db from "../../config/connectionFirebase";
+
+import SidebarOption from "../SidebarOption";
+
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
 import InsertCommentIcon from "@material-ui/icons/InsertComment";
@@ -13,9 +17,27 @@ import AddIcon from "@material-ui/icons/Add";
 import DraftsIcon from "@material-ui/icons/Drafts";
 
 import "./styles.css";
-import SidebarOption from "../SidebarOption";
+import { DockSharp } from "@material-ui/icons";
+
+interface IChannel {
+  id: string;
+  name: string;
+}
 
 const Sidebar = () => {
+  const [channels, setChannels] = useState<IChannel[]>([]);
+
+  useEffect(() => {
+    db.collection("rooms").onSnapshot((snapshot) =>
+      setChannels(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().name,
+        }))
+      )
+    );
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -40,6 +62,10 @@ const Sidebar = () => {
       <SidebarOption Icon={ExpandMoreIcon} title="Canais" />
       <hr />
       <SidebarOption Icon={AddIcon} title="Add Canal" />
+
+      {channels.map((channel) => (
+        <SidebarOption key={channel.id} title={channel.name} />
+      ))}
     </div>
   );
 };
