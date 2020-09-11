@@ -6,7 +6,7 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 
 import "./styles.css";
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <div className="header">
       <div className="header__left">
