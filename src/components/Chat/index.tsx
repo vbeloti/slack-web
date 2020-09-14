@@ -65,18 +65,17 @@ const Chat = () => {
             <InfoOutlinedIcon /> Detalhes
           </p>
         </div>
-
-        <div className="chat__messages">
-          {roomMessages.map(({ message, timestamp, user, userImage }) => (
-            <Message
+      </div>
+      <div className="chat__messages">
+        {roomMessages.map(({ message, timestamp, user, userImage }) => (
+          <Message
             key={timestamp.seconds}
-              message={message}
-              timestamp={timestamp}
-              user={user}
-              userImage={userImage}
-            />
-          ))}
-        </div>
+            message={message}
+            timestamp={timestamp}
+            user={user}
+            userImage={userImage}
+          />
+        ))}
       </div>
     </div>
   );
