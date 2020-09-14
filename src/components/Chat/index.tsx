@@ -6,6 +6,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
 import "./styles.css";
 import db from "../../config/connectionFirebase";
+import Message from "../Message";
 
 interface IUseParams {
   roomId: string;
@@ -16,12 +17,12 @@ interface IRoomDetails {
 }
 
 interface IRoomMessages {
+  message: string;
+  user: string;
+  userImage: string;
   timestamp: {
-    message: string;
-    user: string;
-    userImage: string;
-  }
-  
+    seconds: number;
+  };
 }
 
 const Chat = () => {
@@ -66,7 +67,15 @@ const Chat = () => {
         </div>
 
         <div className="chat__messages">
-          
+          {roomMessages.map(({ message, timestamp, user, userImage }) => (
+            <Message
+            key={timestamp.seconds}
+              message={message}
+              timestamp={timestamp}
+              user={user}
+              userImage={userImage}
+            />
+          ))}
         </div>
       </div>
     </div>
