@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Chat from "./components/Chat";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
 
   return (
     <div className="app">
