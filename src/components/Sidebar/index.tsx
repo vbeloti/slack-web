@@ -17,7 +17,6 @@ import AddIcon from "@material-ui/icons/Add";
 import DraftsIcon from "@material-ui/icons/Drafts";
 
 import "./styles.css";
-import { DockSharp } from "@material-ui/icons";
 
 interface IChannel {
   id: string;
