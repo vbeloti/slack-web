@@ -1,7 +1,7 @@
 ## Slack Web (React.js && Typescript && firebase)
 
-<!-- <img src="" alt="Slack" />
-<img src="" alt="Slack" /> -->
+<img src="https://github.com/vbeloti/slack-web/blob/master/.github/assets/img/slack-1.jpg?raw=true" alt="Slack" />
+<img src="https://github.com/vbeloti/slack-web/blob/master/.github/assets/img/slack-2.jpg?raw=true" alt="Slack" />
 
 In the project directory, you can run:
 
