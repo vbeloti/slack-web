@@ -1,6 +1,7 @@
 .message {
     display: flex;
     align-items: center;
+    padding: 20px;
 }
 
 .message > img {
@@ -18,3 +19,4 @@
     font-weight: 300;
     font-size: 13px;
 }
+
