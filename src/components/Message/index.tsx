@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import './styles.css';
+import "./styles.css";
 
-const Message = () => {
-  return (
-      <div className="message">
-          
-      </div>
-  );
+interface IMessage {
+  message?: string;
+  timestamp?: string;
+  user?: string;
+  userImage?: string;
 }
+
+const Message = ({ message, timestamp, user, userImage }: IMessage) => {
+  return <div className="message"></div>;
+};
 
 export default Message;
