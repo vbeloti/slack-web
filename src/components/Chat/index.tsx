@@ -7,6 +7,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import "./styles.css";
 import db from "../../config/connectionFirebase";
 import Message from "../Message";
+import ChatInput from "../ChatInput";
 
 interface IUseParams {
   roomId: string;
@@ -77,6 +78,8 @@ const Chat = () => {
           />
         ))}
       </div>
+
+      <ChatInput channelName={roomDetails?.name} channelId={roomId}  />
     </div>
   );
 };

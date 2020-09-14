@@ -17,6 +17,7 @@ import AddIcon from "@material-ui/icons/Add";
 import DraftsIcon from "@material-ui/icons/Drafts";
 
 import "./styles.css";
+import { useStateValue } from "../../context/StateProvider";
 
 interface IChannel {
   id: string;
@@ -25,6 +26,7 @@ interface IChannel {
 
 const Sidebar = () => {
   const [channels, setChannels] = useState<IChannel[]>([]);
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     db.collection("rooms").onSnapshot((snapshot) =>
@@ -44,7 +46,7 @@ const Sidebar = () => {
           <h2>Vinicius Beloti</h2>
           <h3>
             <FiberManualRecordIcon />
-            VBeloti
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
